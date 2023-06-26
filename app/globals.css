@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  background-image: url();
+  background-image: url("../public/cielo.jpg");
 }
