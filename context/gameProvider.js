@@ -6,17 +6,26 @@ import { GameContext } from "./gameContext"
 const initialState = { 
     blueBirdPoints:0,
     pinkBirdPoints:0,
+    gameover:false,
 }
 
 export const GameProvider = ({children}) => {
     const [ state, setState ] = useState(initialState)
     
     const incrementBluePoints = () => {
-        setState( state => ({...state, blueBirdPoints:state.blueBirdPoints +1}))
+        setState( prev => ({...prev, blueBirdPoints:prev.blueBirdPoints +1}))
     }
 
     const incrementPinkPoints = () => {
-        setState( state => ({...state, pinkBirdPoints:state.pinkBirdPoints +1}))
+        setState( prev => ({...prev, pinkBirdPoints:prev.pinkBirdPoints +1}))
+    }
+    
+    const setGameOver = () => {
+        setState( prev => ({...prev, gameover:true}))
+    }
+    
+    const resetGame = () => {
+        setState(initialState)
     }
 
     return (
@@ -25,7 +34,9 @@ export const GameProvider = ({children}) => {
                 state,
                 setState,
                 incrementBluePoints,
-                incrementPinkPoints
+                incrementPinkPoints,
+                setGameOver,
+                resetGame
             }}
         >
             { children }
