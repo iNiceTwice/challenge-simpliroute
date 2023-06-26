@@ -4,4 +4,20 @@
 
 body {
   background-image: url("../public/cielo.jpg");
+  padding: 0;
+}
+
+.pink-bird {
+  background-image: url("../public/aveRosa.png");
+  background-repeat: no-repeat;
+}
+
+.blue-bird {
+  background-image: url("../public/aveAzul.png");
+  background-repeat: no-repeat;
+}
+
+.bird-house {
+  background-image: url("../public/casaPajaros.png");
+  background-repeat: no-repeat;
 }
